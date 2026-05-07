@@ -1,119 +1,373 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Aluguel de carros populares com preços acessíveis e atendimento rápido pelo WhatsApp. Reserve seu carro hoje mesmo!">
-  <meta name="robots" content="index, follow">
-  <title>Aluguel de Carros</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A. Z. Seguros - Corretora de Seguros em Santa Rosa RS. Seguro auto, vida, residencial, empresarial, saúde e previdência. Atendimento rápido pelo WhatsApp." />
+  <meta name="robots" content="index, follow" />
+  <title>A. Z. Seguros | Corretora de Seguros</title>
+
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b7a3d;
+      color: white;
+      padding: 20px;
       text-align: center;
     }
-    header {
-      background-color: #007b33;
-      color: white;
-      padding: 40px 20px;
-    }
+
     header h1 {
-      margin: 0;
-      font-size: 2.2em;
+      font-size: 2rem;
+      margin-bottom: 5px;
     }
-    .hero {
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    nav {
+      background: #06602f;
       display: flex;
       justify-content: center;
-      padding: 10px;
       flex-wrap: wrap;
+      gap: 15px;
+      padding: 12px;
     }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    .hero {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
     .hero img {
+      width: 220px;
       max-width: 90%;
       height: auto;
-      object-fit: contain;
+      margin-bottom: 15px;
       border-radius: 10px;
-      background: white;
+      background: #fff;
       padding: 10px;
     }
-    .content {
-      padding: 30px 20px;
-    }
-    .content h2 {
-      color: #007b33;
-      font-size: 1.8em;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      font-size: 1.1em;
-      margin: 0 auto;
-      max-width: 500px;
-      text-align: left;
-    }
-    ul li {
+
+    .hero h2 {
+      font-size: 1.8rem;
       margin-bottom: 10px;
+      color: #0b7a3d;
     }
-    ul li::before {
-      content: "✔️ ";
+
+    .hero p {
+      font-size: 1.05rem;
+      margin-bottom: 15px;
     }
-    .whatsapp-button {
+
+    .btn-whatsapp {
       display: inline-block;
-      margin-top: 30px;
-      padding: 15px 25px;
-      background-color: #25d366;
+      background: #25d366;
       color: white;
-      font-size: 1.2em;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe5d;
+    }
+
+    section {
+      margin-top: 25px;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    section h3 {
+      color: #0b7a3d;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .card {
+      background: #f2f2f2;
+      padding: 18px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .card h4 {
+      margin-bottom: 8px;
+      color: #06602f;
+    }
+
+    .info-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .info-list li {
+      margin-bottom: 8px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 320px;
       border: none;
       border-radius: 10px;
-      text-decoration: none;
-      transition: background 0.3s;
+      margin-top: 10px;
     }
-    .whatsapp-button:hover {
-      background-color: #1ebe5d;
+
+    footer {
+      margin-top: 25px;
+      background: #06602f;
+      color: white;
+      padding: 25px;
+      text-align: center;
     }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .policy {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.8em;
+        font-size: 1.6rem;
       }
-      .content h2 {
-        font-size: 1.5em;
+
+      .hero h2 {
+        font-size: 1.4rem;
       }
-      .whatsapp-button {
-        font-size: 1em;
-        padding: 12px 20px;
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn-whatsapp {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <h1>Aluguel de Carros Populares</h1>
-    <p>Dirija hoje mesmo! Diárias acessíveis e atendimento rápido.</p>
+    <h1>A. Z. Seguros</h1>
+    <p>Corretora de Seguros em Santa Rosa - RS</p>
   </header>
 
-  <div class="hero">
-    <img src="Localiza_Logo_300.webp" alt="Logo Localiza">
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+    <a href="#privacidade">Privacidade</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="hero" id="inicio">
+      <img src="Localiza_Logo_300.webp" alt="A. Z. Seguros Logo">
+
+      <h2>Seguro com Atendimento Rápido e Personalizado</h2>
+      <p>Faça sua cotação de forma rápida e segura. Atendimento direto pelo WhatsApp.</p>
+
+      <!-- TROQUE O NÚMERO DO WHATSAPP ABAIXO -->
+      <a class="btn-whatsapp" href="https://wa.me/5555999999999" target="_blank" rel="noopener noreferrer">
+        Solicitar Cotação no WhatsApp
+      </a>
+    </div>
+
+    <section id="sobre">
+      <h3>Sobre a Empresa</h3>
+      <p>
+        A <strong>A. Z. Seguros</strong> é uma corretora de seguros localizada em Santa Rosa - RS.
+        Atuamos oferecendo soluções completas em seguros e consórcios, sempre com foco em confiança,
+        transparência e atendimento rápido.
+      </p>
+
+      <br>
+
+      <ul class="info-list">
+        <li><strong>Razão Social:</strong> J. A. X. Corretora de Seguros Ltda.</li>
+        <li><strong>Nome Fantasia:</strong> A. Z. Seguros</li>
+        <li><strong>CNPJ:</strong> 27.789.295/0001-83</li>
+        <li><strong>Situação:</strong> Ativa</li>
+        <li><strong>Endereço:</strong> Avenida Rio Branco, 345 - Sala 6 / Sala 07 - Centro</li>
+        <li><strong>Cidade/UF:</strong> Santa Rosa - RS</li>
+        <li><strong>CEP:</strong> 98780-738</li>
+      </ul>
+    </section>
+
+    <section id="servicos">
+      <h3>Nossos Serviços</h3>
+
+      <div class="grid">
+        <div class="card">
+          <h4>Seguro Auto</h4>
+          <p>Proteção completa para seu veículo com as melhores seguradoras.</p>
+        </div>
+
+        <div class="card">
+          <h4>Seguro Residencial</h4>
+          <p>Garanta segurança para sua casa com cobertura completa.</p>
+        </div>
+
+        <div class="card">
+          <h4>Seguro de Vida</h4>
+          <p>Mais tranquilidade para você e sua família em qualquer situação.</p>
+        </div>
+
+        <div class="card">
+          <h4>Seguro Empresarial</h4>
+          <p>Proteja sua empresa com planos completos e personalizados.</p>
+        </div>
+
+        <div class="card">
+          <h4>Planos de Saúde</h4>
+          <p>Planos individuais e empresariais com ótimas condições.</p>
+        </div>
+
+        <div class="card">
+          <h4>Consórcios</h4>
+          <p>Consórcio para aquisição de veículos, imóveis e bens diversos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h3>Contato</h3>
+
+      <p>Entre em contato conosco para fazer uma cotação ou tirar dúvidas.</p>
+
+      <br>
+
+      <ul class="info-list">
+        <li><strong>Endereço:</strong> Avenida Rio Branco, 345 - Sala 6 / Sala 07 - Centro - Santa Rosa/RS</li>
+        <li><strong>Telefone:</strong> (55) 3510-XXXX</li>
+        <li><strong>WhatsApp:</strong> (55) 99100-XXXX</li>
+        <li><strong>E-mail:</strong> azseguros@email.com</li>
+      </ul>
+
+      <br>
+
+      <a class="btn-whatsapp" href="https://wa.me/5555999999999" target="_blank" rel="noopener noreferrer">
+        Atendimento no WhatsApp
+      </a>
+
+      <br><br>
+
+      <h4 style="color:#0b7a3d;">Localização</h4>
+
+      <!-- MAPA GOOGLE (PESQUISA LOCAL) -->
+      <iframe 
+        src="https://www.google.com/maps?q=Avenida%20Rio%20Branco,%20345,%20Santa%20Rosa%20RS&output=embed"
+        loading="lazy">
+      </iframe>
+
+    </section>
+
+    <section id="privacidade">
+      <h3>Política de Privacidade</h3>
+
+      <p>
+        A A. Z. Seguros respeita a sua privacidade. As informações enviadas por WhatsApp ou formulários
+        serão utilizadas apenas para atendimento e cotação de serviços.
+      </p>
+
+      <br>
+
+      <p>
+        Não compartilhamos seus dados com terceiros sem autorização, exceto quando necessário para
+        emissão de propostas junto às seguradoras parceiras.
+      </p>
+
+      <br>
+
+      <p>
+        Caso deseje solicitar remoção de dados, entre em contato pelo WhatsApp ou e-mail.
+      </p>
+    </section>
+
+    <section>
+      <h3>Termos de Uso</h3>
+      <p>
+        As informações deste site são apenas para fins de divulgação. As condições e valores de seguros
+        podem variar conforme análise e regras de cada seguradora.
+      </p>
+      <br>
+      <p>
+        Ao utilizar este site, você concorda com estes termos e com nossa Política de Privacidade.
+      </p>
+    </section>
+
   </div>
 
-  <div class="content">
-    <h2>Por que alugar com a gente?</h2>
-    <ul>
-      <li>Sem consulta ao SPC/Serasa</li>
-      <li>Atendimento rápido pelo WhatsApp</li>
-      <li>Planos diários, semanais e mensais</li>
-      <li>Carros revisados e prontos para rodar</li>
-    </ul>
+  <footer>
+    <p><strong>A. Z. Seguros</strong> - J. A. X. Corretora de Seguros Ltda.</p>
+    <p>CNPJ: 27.789.295/0001-83</p>
+    <p>Santa Rosa - RS</p>
 
-    <a class="whatsapp-button" href="https://wa.me/5511920624385?text=Ola%20Gostaria%20de%20Reservar%20Meu%20Veiculo%20Hoje%20!" target="_blank" rel="noopener noreferrer">
-      Fale com a gente no WhatsApp
-    </a>
-  </div>
+    <div class="policy">
+      <p>Este site segue boas práticas de transparência e atendimento para anúncios no Google Ads.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
